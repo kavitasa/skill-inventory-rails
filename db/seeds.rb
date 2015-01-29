@@ -1,7 +1,21 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
+m1 = FactoryGirl.create(:section, name: "Module 1")
+m2 = FactoryGirl.create(:section, name: "Module 2")
+m3 = FactoryGirl.create(:section, name: "Module 3")
+m4 = FactoryGirl.create(:section, name: "Module 4")
+
+puts " Successfully added sections from seed data. ".center(70, "~*~")
+
+FactoryGirl.create(:skill, featured: true, section: m1)
+FactoryGirl.create(:skill, featured: true, section: m2)
+FactoryGirl.create(:skill, featured: false, section: m3)
+FactoryGirl.create(:skill, featured: true, section: m4)
+FactoryGirl.create(:skill, featured: false, section: m1)
+
+puts " Successfully added skills from seed data. ".center(70, "~*~")
+
+FactoryGirl.create(:tag)
+FactoryGirl.create(:tag)
+FactoryGirl.create(:tag)
+FactoryGirl.create(:tag)
+
+puts " Successfully added tags from seed data. ".center(70, "~*~")
